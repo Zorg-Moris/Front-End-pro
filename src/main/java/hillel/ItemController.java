@@ -20,8 +20,6 @@ public class ItemController {
         Gson gson = new Gson();
         Items items = gson.fromJson(message, Items.class);
         System.out.println(items);
-        itemsService.save(items);
-
         return new String("Hello, " + message + "!");
     }
 
