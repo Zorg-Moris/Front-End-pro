@@ -1,36 +1,53 @@
 "use strict";
 
-let stompClient = null;
-let socket = new SockJS('/shop');
 
-function connect() {
-    stompClient = Stomp.over(socket);
-    stompClient.connect({}, function (frame) {
-        stompClient.subscribe('/frontend/listItems', function (getAllItems) {
-            console.log(getAllItems.body)
-        });
-        stompClient.send("/backend/getAllItems",{}, JSON.stringify("trigger"));
+$(document).ready(function () {
+
+    displayAllProd();
+
+    $("#menRef").click(function () {
+        displayProdGender(men);
     });
-}
 
-let itemShow = (item, index) => "<div class = 'prod' data-index = " + index +
-    '><img src = ' + item.foto + ">" + "<br/>" + item.brand + "<br/>" +
-    item.price + " " + "грн." + "</div>";
-
-
-function displayAllProd() {
-    let str = "";
-    product.forEach(function (item, index) {
-        str += itemShow(item, index);
+    $("#femenRef").click(function () {
+        displayProdGender(woman);
     });
-    $("#showProd").html(str);
-}
 
-displayAllProd();
+    $("#clothesBtn").click(function () {
 
-$(function () {
-     connect();
-     $("form").on('submit', function (e) {
-        e.preventDefault();
-     });
+        categoryProd(statusGender, parts, shirt);
+    });
+
+    $("#allProd").click(function () {
+
+        displayAllProd();
+    });
+
+    $("#shoesBtn").click(function () {
+        categoryProd(statusGender, shoes);
+    });
+
+    $("#sideMenu").on("click", "#menShoes", function (event) {
+        categoryProd(statusGender, shoes);
+    });
+
+    $("#sideMenu").on("click", "#menShirt", function (event) {
+        categoryProd(statusGender, shirt);
+    });
+
+    $("#sideMenu").on("click", "#menParts", function (event) {
+        categoryProd(statusGender, parts);
+    });
+
+    $("#sideMenu").on("click", "#womenShoes", function (event) {
+        categoryProd(statusGender, shoes);
+    });
+
+    $("#sideMenu").on("click", "#womenShirt", function (event) {
+        categoryProd(statusGender, shirt);
+    });
+
+    $("#sideMenu").on("click", "#womenParts", function (event) {
+        categoryProd(statusGender, parts);
+    });
 });

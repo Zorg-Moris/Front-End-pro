@@ -1,6 +1,7 @@
 "use strict";
 
 let product = [{
+        id: 1,
         category: "shirt",
         sex: "men",
         size: 41,
@@ -12,6 +13,7 @@ let product = [{
     },
 
     {
+        id: 2,
         category: "shirt",
         sex: "men",
         size: 42,
@@ -22,6 +24,7 @@ let product = [{
         full_description: "Состав: Хлопок - 97%, Эластан - 3%. Страна производства: Бангладеш. Длина: 75 см.Длина рукава: 68 см.Сезон: мульти.Цвет: белый.Узор: однотонный.Застежка: на пуговицах.Тип силуэта: приталенный."
     },
     {
+        id: 3,
         category: "shirt",
         sex: "men",
         size: 42,
@@ -33,6 +36,7 @@ let product = [{
     },
 
     {
+        id: 4,
         category: "shirt",
         sex: "men",
         size: 41,
@@ -44,7 +48,8 @@ let product = [{
     },
 
     {
-        category: "pants",
+        id: 5,
+        category: "parts",
         sex: "men",
         size: 45,
         brand: "Mango Man",
@@ -55,7 +60,8 @@ let product = [{
     },
 
     {
-        category: "pants",
+        id: 6,
+        category: "parts",
         sex: "men",
         size: 48,
         brand: "Mango Man",
@@ -66,7 +72,8 @@ let product = [{
     },
 
     {
-        category: "pants",
+        id: 7,
+        category: "parts",
         sex: "men",
         size: 46,
         brand: "Topman",
@@ -77,7 +84,8 @@ let product = [{
     },
 
     {
-        category: "pants",
+        id: 8,
+        category: "parts",
         sex: "men",
         size: 46,
         brand: "oodji",
@@ -87,6 +95,7 @@ let product = [{
         full_description: "Состав: Полиэстер - 70%, Вискоза - 30%.Высота: 25 см. Длина по внутреннему шву: 84 см. Длина по боковому шву: 108 см. Сезон: мульти.Цвет: черный. Узор: однотонный. Застежка: на молнии. Посадка: straight fit. Карманы: 4."
     },
     {
+        id: 9,
         category: "shoes",
         sex: "men",
         size: 41,
@@ -98,6 +107,7 @@ let product = [{
     },
 
     {
+        id: 10,
         category: "shoes",
         sex: "men",
         size: 43,
@@ -109,6 +119,7 @@ let product = [{
     },
 
     {
+        id: 11,
         category: "shoes",
         sex: "men",
         size: 42,
@@ -120,6 +131,7 @@ let product = [{
     },
 
     {
+        id: 12,
         category: "shoes",
         sex: "men",
         size: 44,
@@ -131,7 +143,8 @@ let product = [{
     },
 
     {
-        category: "blouse",
+        id: 13,
+        category: "shirt",
         sex: "femen",
         size: 44,
         brand: "oodji",
@@ -141,6 +154,7 @@ let product = [{
         full_description: "Состав: Вискоза - 100%. Длина: 65 см. Длина рукава: 61 см.Сезон: мульти.Цвет: бордовый.Узор: горох.Застежка: на пуговицах.Тип силуэта: прямой."
     },
     {
+        id: 14,
         category: "shirt",
         sex: "femen",
         size: 42,
@@ -151,6 +165,7 @@ let product = [{
         full_description: "Состав: Хлопок - 63%, Полиамид - 32%, Эластан - 5%."
     },
     {
+        id: 15,
         category: "shirt",
         sex: "femen",
         size: 41,
@@ -162,6 +177,7 @@ let product = [{
     },
 
     {
+        id: 16,
         category: "shirt",
         sex: "femen",
         size: 42,
@@ -173,6 +189,7 @@ let product = [{
     },
 
     {
+        id: 17,
         category: "parts",
         sex: "femen",
         size: 42,
@@ -185,6 +202,7 @@ let product = [{
 
 
     {
+        id: 18,
         category: "parts",
         sex: "femen",
         size: 42,
@@ -195,7 +213,8 @@ let product = [{
         full_description: "Состав: Полиэстер - 100%.Страна производства: Румыния. Длина по внутреннему шву: 63 см.Длина по боковому шву: 92 см. Ширина по низу: 15 см. Сезон: мульти. Цвет: черный. Узор: однотонный.Застежка: на молнии. Посадка: slim fit.Карманы: 2."
     },
 
-     {
+    {
+        id: 19,
         category: "parts",
         sex: "femen",
         size: 42,
@@ -206,6 +225,7 @@ let product = [{
         full_description: "Состав: Полиэстер - 73%, Вискоза - 19%, Эластан - 8%.Страна производства: Вьетнам. Высота: 28 см.  Длина по внутреннему шву: 68 см.  Длина по боковому шву: 94 см. Ширина по низу: 17 см.Сезон: мульти.  Цвет: зеленый. Узор: однотонный.Застежка: на крючках, на молнии, на пуговицах.Детали одежды: пояс/ремень.Посадка: slim fit.Талия: высокая.Карманы: 2."
     },
     {
+        id: 20,
         category: "parts",
         sex: "femen",
         size: 42,
@@ -216,6 +236,7 @@ let product = [{
         full_description: "Состав: Хлопок - 60%, Акрил - 36%, Эластан - 4%. Страна производства: Республика Македония. Высота: 23 см. Длина по внутреннему шву: 73 см. Длина по боковому шву: 97 см. Сезон: мульти. Цвет: коричневый.Узор: другое. Застежка: на молнии.Посадка: slim fit.Талия: стандартная. Карманы: 2."
     },
     {
+        id: 21,
         category: "shoes",
         sex: "femen",
         size: 39,
@@ -227,6 +248,7 @@ let product = [{
     },
 
     {
+        id: 22,
         category: "shoes",
         sex: "femen",
         size: 42,
@@ -238,6 +260,7 @@ let product = [{
     },
 
     {
+        id: 23,
         category: "shoes",
         sex: "femen",
         size: 41,
@@ -246,9 +269,10 @@ let product = [{
         foto: "imgDB/shoes_femen_Vitacci_black_suede.jpg",
         short_description: "Утонченная остроносая обувь – хит сезона осень-зима 2016/17. Она зрительно вытягивает силуэт, добавляя вам изящества и грациозности, и придает женственности любому образу.",
         full_description: "Материал верха: натуральный велюр.Внутренний материал: натуральная кожа.Материал подошвы: резина.Материал стельки: натуральная кожа. Высота каблука: 11 см.Сезон: мульти.Цвет: черный.Узор: однотонный.Застежка: без застежки.Высота каблука: высокий."
-     },
+    },
 
-     {
+    {
+        id: 24,
         category: "shoes",
         sex: "femen",
         size: 41,
@@ -257,5 +281,5 @@ let product = [{
         foto: "imgDB/shoes_femen_Vitacci_black_lacquer.jpg",
         short_description: "Материал верха: натуральная лаковая кожа.Внутренний материал: натуральная кожа.Материал подошвы: полимер",
         full_description: "Материал верха: натуральная лаковая кожа.Внутренний материал: натуральная кожа.Материал подошвы: полимер."
-     }
+    },
 ]

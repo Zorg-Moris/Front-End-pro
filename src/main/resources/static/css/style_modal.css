@@ -1,0 +1,148 @@
+
+    #modalShowProd {
+		width: 630px;
+	    min-height: 450px;
+		max-height: 600px;
+		overflow: auto;
+        border-radius: 5px;
+        border: 3px #000 solid;
+        background: #fff;
+        position: fixed;
+        left: 40%;
+        margin-top: -150px;
+        margin-left: -150px;
+        opacity: 0.9;
+        z-index: 5;
+        padding: 20px 10px;
+        display: none;
+    }
+    
+    #modalShowProd #modal_close {
+        width: 21px;
+        height: 21px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        display: block;
+	}
+	
+	.close {
+		top: -10px;
+		right: -10px;
+		width: 20px;
+		height: 20px;
+		position: absolute;
+		padding: 0;
+		border: 2px solid #ccc;
+		-webkit-border-radius: 15px;
+		-moz-border-radius: 15px;
+		-ms-border-radius: 15px;
+		-o-border-radius: 15px;
+		border-radius: 15px;
+		background-color: rgba(61, 61, 61, 0.8);
+		-webkit-box-shadow: 0px 0px 10px #000;
+		-moz-box-shadow: 0px 0px 10px #000;
+		box-shadow: 0px 0px 10px #000;
+		text-align: center;
+		text-decoration: none;
+		font: 13px/20px 'Tahoma', Arial, sans-serif;
+		font-weight: bold;
+		-webkit-transition: all ease .8s;
+		-moz-transition: all ease .8s;
+		-ms-transition: all ease .8s;
+		-o-transition: all ease .8s;
+		transition: all ease .8s;
+	}
+	.close:before {
+		color: rgba(255, 255, 255, 0.9);
+		content: "X";
+		text-shadow: 0 -1px rgba(0, 0, 0, 0.9);
+		font-size: 12px;
+	}
+	.close:hover {
+		background-color: rgba(252, 20, 0, 0.8);
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		transform: rotate(360deg);    
+	}
+
+   
+    #overlay {
+        z-index: 4;
+        position: fixed;
+        background-color: #000;
+        opacity: 0.5;
+       -moz-opacity: 0.5;
+        filter: alpha(opacity=80);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+		display:none;
+ }
+
+	.headModal{
+	 height: 80px;
+	 width: 590px;
+     position: fixed;
+	 border: 3px red solid;
+	 display: flex;
+	 align-items: flex-end;
+	 background-color:whitesmoke;
+   
+	}
+
+	#brandModal{
+		height: 45px;
+		width: 250px;
+		border: 2px blue solid;
+		margin: 15px;
+	
+	   text-align: center;
+	}
+	#priceModal{
+		height: 45px;
+		width: 250px;
+		border: 2px rgba(53, 167, 104, 0.281) solid;
+		margin: 15px;
+	   text-align: center;
+	   
+	}
+
+	#cartBtn{
+		height: 45px;
+		width: 250px;
+		border: 2px rgba(53, 167, 104, 0.281) solid;
+		margin: 15px;
+	   text-align: center;
+	}
+	.cartBtn{
+		width: 100%;
+		height:100%;
+		background: -webkit-gradient(linear, 0 0, 0 100%, from(#00BBD6), to(#EBFFFF));
+	}
+
+	.imgModal{
+		height: 390px;
+		width: 350px;
+		margin-top: 90px;
+		text-align: center;
+		border: 2px violet solid;
+	}
+
+	.imgModal img{
+		height: 380px;
+		width: 340px;
+	}
+
+	.discription{
+		width: 590px;
+		height: 200px;
+		border: 2px green solid;
+		margin-bottom: 25px;
+	}
+	

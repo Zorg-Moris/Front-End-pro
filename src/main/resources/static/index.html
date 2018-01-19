@@ -5,18 +5,25 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<title>Intertnet shop</title>
+
+
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style_modal.css">
 </head>
 
 <body>
 	<div class="wrapper">
 		<header class="header">
 			<div class="gender-menu">
-				<a href="#" class="gender nav">
+				<a id="menRef" href="#" class="gender nav">
 					<span>Мужчинам</span>
 				</a>
-				<a href="#" class="gender nav">
+
+				<a id="femenRef" href="#" class="gender nav">
 					<span>Женщинам</span>
+				</a>
+				<a id="allProd" href="#" class="gender nav">
+					<span>Все товары</span>
 				</a>
 			</div>
 			<a href="#" class="header__logo">[ Интернет магазин ]</a>
@@ -26,42 +33,20 @@
 	<div class="menu">
 		<div class="wrapper">
 			<div class="menu-wrapper">
-				<a href="#" class="nav goods">Одежда</a>
-				<a href="#" class="nav goods">Обувь</a>
-				<a href="#" class="nav goods">Аксессуары</a>
+				<a id="clothesBtn" href="#" class="nav goods">Одежда</a>
+				<a id="shoesBtn" href="#" class="nav goods">Обувь</a>
+				<!-- <a href="#" class="nav goods">Аксессуары</a> -->
 			</div>
 		</div>
 	</div>
 	<div class="wrapper">
-		<div class="grid-container">
-			<aside>
-				<p>
-					<span>
-						<b>Категории:</b>
-					</span>
-				</p>
-				<p>Мужская обувь:</p>
-				<ul>
-					<li>Туфли</li>
-				</ul>
-				<p>Мужская Одежда:</p>
-				<ul>
-					<li>Рубашки</li>
-					<li>Брюки</li>
-				</ul>
-				<p>Женская обувь:</p>
-				<ul>
-					<li>Туфли</li>
-				</ul>
-				<p>Женская Одежда:</p>
-				<ul>
-					<li>Рубашки/Блузы</li>
-					<li>Брюки</li>
-				</ul>
-			</aside>
+		<div id="sideMenu" class="grid-container">
+				<!-- <a id='infoProd' href="#">Подробнее</a> -->
+			<aside></aside>
+			
 			<article>
-				<div class="Chosen-good">
-					<b>Мужские Рубашки</b>
+				<div id="chosen-good" class="Chosen-good">
+					<b></b>
 				</div>
 				<div id="showProd" class="flex-container">
 					<!-- <img src="img/BR019EMFZL55_2739823_1_v4.jpg">
@@ -69,16 +54,38 @@
 					<img src="img/PI022EMWOZ06_5291070_1_v2.jpg">
 					<img src="img/WA010EMXFR46_5388765_1_v2.jpg"> -->
 				</div>
+				<div id="modalShowProd" class="modal">
+
+					<div class="headModal">
+						<a id="modalClose" class="close" title="Закрыть" href="#close"></a>
+
+						<div id="brandModal"></div>
+						<div id="priceModal"></div>
+						<div id="cartBtn">
+							<input class="cartBtn" type="button" value="Добавить в козину">
+						</div>
+					</div>
+
+					<div id="imgModal" class="imgModal">
+						<img src="imgDB/shirt_green.jpg">
+					</div>
+					<div id="discription" class="discription"></div>
+
+				</div>
+
+				<div id="overlay"></div>
+				<!-- Пoдлoжкa -->
+
 			</article>
 		</div>
 	</div>
 
-
-	<script src="/node_modules/jquery/dist/jquery.min.js"></script>
-	<script src="/webjars/sockjs-client/sockjs.min.js"></script>
-	<script src="/webjars/stomp-websocket/stomp.min.js"></script>
+	<script src="node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="js/function.js"></script>
 	<script src="js/prod.js"></script>
 	<script src="js/app.js"></script>
+	<script src="js/modal.js"></script>
+
 </body>
 
 </html>
