@@ -1,7 +1,25 @@
 "use strict";
+let stompClient = null;
+let socket = new SockJS('/shop');
 
+function connect() {
+    stompClient = Stomp.over(socket);
+    stompClient.connect({}, function (frame) {
+        stompClient.subscribe('/frontend/listItems', function (getAllItems) {
+//            console.log(getAllItems.body)
+        });
+        product.forEach(item => {
+            stompClient.send("/backend/getAllItems",{}, JSON.stringify(item));
+        });
+
+    });
+}
 
 $(document).ready(function () {
+
+    connect();
+
+    console.log('inside');
 
     displayAllProd();
 
