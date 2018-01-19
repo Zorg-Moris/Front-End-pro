@@ -10,7 +10,7 @@ let shoes = "shoes";
 
 let itemShow = (item, index) => `<div class = 'prod' data-index = ${index}>
 <img src = ${item.foto}><br/>${item.brand}<br/>${item.price}
- ${"грн."}/<br/><a href="#" >Подробнее</a></div>`;
+ ${"грн."}<br/><a id='infoProd' href="#">Подробнее</a></div>`;
 
 
 function displayAllProd() {
