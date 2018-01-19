@@ -10,7 +10,7 @@ public class ItemController {
 
     @MessageMapping("/getAllItems")
     @SendTo("/frontend/listItems")
-    public String getAllItems(String message) {
+            public String getAllItems(String message) {
         return new String("Hello, " + message + "!");
     }
 
