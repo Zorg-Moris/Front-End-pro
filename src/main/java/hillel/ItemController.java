@@ -19,14 +19,7 @@ public class ItemController {
     @MessageMapping("/getAllItems")
     @SendTo("/frontend/listItems")
             public Object [] getAllItems(String message) {
-        Gson gson = new Gson();
-
-        List result = new ArrayList();
-        itemsService.getAllItems().forEach(item -> {
-            result.add(gson.toJson(item));
-        });
-
-        return result.toArray();
+        return itemsService.getAllItems().toArray();
     }
 
 }

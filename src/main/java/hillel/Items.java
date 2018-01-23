@@ -142,7 +142,7 @@ public class Items {
 
     @Override
     public String toString() {
-        return "Items{" +
+        return "{" +
                 "id=" + id +
                 ", category='" + category + '\'' +
                 ", sex='" + sex + '\'' +

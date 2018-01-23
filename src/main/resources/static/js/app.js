@@ -19,44 +19,51 @@ function connect() {
 $(document).ready(function () {
 
     connect();
+
+    setTimeout(()=>{
+
     console.log(product);
-    displayAllProd();
 
-       $("#menRef").click(function () {
-           displayProdGender(men);
-       });
+     displayAllProd();
 
-       $("#femenRef").click(function () {
-           displayProdGender(woman);
+           $("#menRef").click(function () {
+               displayProdGender(men);
+           });
 
-       });
+           $("#femenRef").click(function () {
+               displayProdGender(woman);
 
-       $("#allProd").click(function () {
-           displayAllProd();
-       });
+           });
 
-       $("#clothesBtn").click(function () {
+           $("#allProd").click(function () {
+               displayAllProd();
+           });
 
-           categoryProd(statusGender, parts, shirt);
-       });
+           $("#clothesBtn").click(function () {
 
-       $("#shoesBtn").click(function () {
-           categoryProd(statusGender, shoes);
-       });
+               categoryProd(statusGender, parts, shirt);
+           });
 
-       $("#sideMenu").on("click", "#Shoes", function () {
-           categoryProd(statusGender, shoes);
-       });
+           $("#shoesBtn").click(function () {
+               categoryProd(statusGender, shoes);
+           });
 
-       $("#sideMenu").on("click", "#Shirt", function () {
-           categoryProd(statusGender, shirt);
-       });
+           $("#sideMenu").on("click", "#Shoes", function () {
+               categoryProd(statusGender, shoes);
+           });
 
-       $("#sideMenu").on("click", "#Parts", function () {
-           categoryProd(statusGender, parts);
-       });
+           $("#sideMenu").on("click", "#Shirt", function () {
+               categoryProd(statusGender, shirt);
+           });
 
-       $("#cartBtn").on("click", ".cartBtn", function () {
-           addCart();
-       });
+           $("#sideMenu").on("click", "#Parts", function () {
+               categoryProd(statusGender, parts);
+           });
+
+           $("#cartBtn").on("click", ".cartBtn", function () {
+               addCart();
+           });
+    },2000);
+
+
 });
