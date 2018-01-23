@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ваша корзина</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="cartFlex">
+        <div class="nameShop">Intertnet shop</div>
+        <div class="cartName">ВАША КОРЗИНА</div>
+        <div id="cartMessage" class="cartMessageInVis">В настоящий момент Ваша корзина пуста!</div>
+
+        <div class="cartExitMessage">
+            <a class="exitCart" href="index.html">
+                <span>Вернуться к покупкам...</span>
+            </a>
+        </div>
+        <div class="alarmMess">"Введите правильное значение!Количества Товара!"</div>
+        <div id="cartShowProd">
+
+        </div>
+        <div class="totalPriceCart">
+            <div class="tpCart">Общая стоимость:</div>
+            <div id="tpCart" class="tpCart1">0</div>
+            <div class="buy">
+                <input id="buyBtn" class="buyBtn" type="button" disabled= "true" value="Купить">
+            </div>
+        </div>
+        <div id="orderForm" class="contact_formInVis">
+            <form class="contact_form" action="#" method="post" name="contact_form">
+                <ul>
+                    <li>
+                        <h2>Форма оформления заказа</h2>
+                        <span class="required_notification">* Обязательно к заполнению</span>
+                    </li>
+                    <li>
+                        <label for="name">Имя:</label>
+                        <input id="name" type="text" required />
+                    </li>
+                    <li>
+                        <label for="lastName">Фамилия:</label>
+                        <input id="lastName" type="text" required/>
+                    </li>
+                    <li>
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" required />
+                        <span class="form_hint">Proper format "name@something.com"</span>
+                    </li>
+                    <li>
+                        <label for="tel">Номер телефона:</label>
+                        <input type="tel" name="tel" placeholder="Номер телефона" />
+                    </li>
+                    <li>
+                        <label for="delivery">Доставка:</label>
+                        <select name="delivery">
+                            <option value="0">Одесса </option>
+                            <option value="1">Отделение № 23</option>
+                            <option value="2">Отделение № 99</option>
+                            <option value="3">Отделение № 123</option>
+                            <option value="4">Отделение № 125</option>
+                        </select>
+                    </li>
+                    <li>
+                        <button id="submitBtn" class="submit" type="submit">Оформить заказ</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="js/function.js"></script>
+    <script src="js/prod.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/modal.js"></script>
+</body>
+
+</html>

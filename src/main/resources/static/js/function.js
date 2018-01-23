@@ -8,9 +8,10 @@ let parts = "parts";
 let shoes = "shoes";
 
 
+
 let itemShow = (item, index) => `<div class = 'prod' data-index = ${index}>
 <img src = ${item.foto}><br/>${item.brand}<br/>${item.price}
- ${"грн."}/<br/><a href="#" >Подробнее</a></div>`;
+ ${"грн."}<br/><a class='infoProd' href="#">Подробнее...</a></div>`;
 
 
 function displayAllProd() {
@@ -20,6 +21,7 @@ function displayAllProd() {
     product.forEach(function (item, index) {
         str += itemShow(item, index);
     });
+    sidePanel();
     $("#showProd").html(str);
 };
 
@@ -100,36 +102,30 @@ function displayProdGender(status) {
     $("#showProd").html(str);
 };
 
-
 function sidePanel(status) {
     let str = "";
+    let genderName = "";
 
     if (status === men) {
+        genderName = "Мужская";
+    } else if (status === woman) {
+        genderName = "Женская";
+    } else if (status !== men && status !== woman) {
+        genderName = "Все Товары";
+    }
 
-        str += `<p><span><b>Категории:</b></span></p>
-            <p>Мужская обувь:</p>
+    str += `<p><span><b>Категории:</b></span></p>
+            <p>${genderName} Обувь:</p>
             <ul>
-                <li id="menShoes">Туфли</li>
+                <li id="Shoes">Туфли</li>
             </ul>
-            <p>Мужская Одежда:</p>
+            <p> ${genderName} Одежда:</p>
             <ul>
-                <li id = "menShirt">Рубашки</li>
-                <li id = "menParts">Брюки</li>
+                <li id = "Shirt">Рубашки</li>
+            </ul>
+            <ul>
+           <li id = "Parts">Брюки</li>
             </ul>`
-    }
-    if (status === woman) {
-        str += `<p><span><b>Категории:</b></span></p>
-                  <p>Женская обувь:</p>
-            <ul>
-                <li id="womenShoes">Туфли</li>
-            </ul>
-            <p>Женская Одежда:</p>
-            <ul>
-                <li id="womenShirt">Рубашки/Блузы</li>
-                <li id="womenParts">Брюки</li>
-            </ul> `
-    }
 
     $("aside").html(str);
-
 };

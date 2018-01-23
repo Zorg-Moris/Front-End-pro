@@ -6,6 +6,9 @@ import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 public class ItemController {
 
@@ -15,12 +18,15 @@ public class ItemController {
 
     @MessageMapping("/getAllItems")
     @SendTo("/frontend/listItems")
-            public String getAllItems(String message) {
-        System.out.println(message);
+            public Object [] getAllItems(String message) {
         Gson gson = new Gson();
-        Items items = gson.fromJson(message, Items.class);
-        System.out.println(items);
-        return new String("Hello, " + message + "!");
+
+        List result = new ArrayList();
+        itemsService.getAllItems().forEach(item -> {
+            result.add(gson.toJson(item));
+        });
+
+        return result.toArray();
     }
 
 }
