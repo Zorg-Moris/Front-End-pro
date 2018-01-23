@@ -5,10 +5,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<title>Intertnet shop</title>
-
-
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/style_modal.css">
+
 </head>
 
 <body>
@@ -25,6 +23,10 @@
 				<a id="allProd" href="#" class="gender nav">
 					<span>Все товары</span>
 				</a>
+				<a id="cart" class="nav goods" href="cart.html">
+					<span> Корзина </span>
+				</a>
+
 			</div>
 			<a href="#" class="header__logo">[ Интернет магазин ]</a>
 			<div class="user-nav"></div>
@@ -35,24 +37,18 @@
 			<div class="menu-wrapper">
 				<a id="clothesBtn" href="#" class="nav goods">Одежда</a>
 				<a id="shoesBtn" href="#" class="nav goods">Обувь</a>
-				<!-- <a href="#" class="nav goods">Аксессуары</a> -->
 			</div>
 		</div>
 	</div>
 	<div class="wrapper">
 		<div id="sideMenu" class="grid-container">
-				<!-- <a id='infoProd' href="#">Подробнее</a> -->
 			<aside></aside>
-			
+
 			<article>
 				<div id="chosen-good" class="Chosen-good">
 					<b></b>
 				</div>
 				<div id="showProd" class="flex-container">
-					<!-- <img src="img/BR019EMFZL55_2739823_1_v4.jpg">
-					<img src="img/PE299EMTZX37_5201531_1_v2.jpg">
-					<img src="img/PI022EMWOZ06_5291070_1_v2.jpg">
-					<img src="img/WA010EMXFR46_5388765_1_v2.jpg"> -->
 				</div>
 				<div id="modalShowProd" class="modal">
 
@@ -65,26 +61,27 @@
 							<input class="cartBtn" type="button" value="Добавить в козину">
 						</div>
 					</div>
-
-					<div id="imgModal" class="imgModal">
-						<img src="imgDB/shirt_green.jpg">
+					<div class="flexModal">
+						<div id="imgModal" class="imgModal">
+						</div>
+						<div id="sDescription" class="shortDescription"></div>
 					</div>
-					<div id="discription" class="discription"></div>
 
+					<div id="fDiscription" class="discription"></div>
 				</div>
 
 				<div id="overlay"></div>
-				<!-- Пoдлoжкa -->
-
 			</article>
 		</div>
 	</div>
+	<footer class="footer"></footer>
 
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>
 	<script src="js/function.js"></script>
 	<script src="js/prod.js"></script>
 	<script src="js/app.js"></script>
 	<script src="js/modal.js"></script>
+	<script src="js/cart.js"></script>
 
 </body>
 
