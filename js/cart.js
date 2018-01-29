@@ -52,11 +52,29 @@ function refreshArr(arr) {
     addlocalStorage();
 };
 
+function addInfoCart() {
+    $.toast({
+        text: "ТОВАР УСПЕШНО ДОБАВЛЕН В КОРЗИНУ",
+        showHideTransition: 'slide',
+        allowToastClose: true,
+        hideAfter: 3000,
+        stack: 30,
+        position: 'top-center',
+        bgColor: '#F0F8FF',
+        textColor: '#000000',
+        textAlign: 'center',
+        loader: true,
+        loaderBg: '#9EC600',
+
+    });
+}
+
 function addCart() {
     let newProdCart = new cartProd(index);
     infoWs = newProdCart;
     cart.push(newProdCart);
     refreshArr(cart);
+    addInfoCart();
 
 };
 
