@@ -69,6 +69,10 @@ function addInfoCart() {
     });
 }
 
+function checkProductCart(item) {
+    cart[item].id == cart[item].id;
+}
+
 function addCart() {
     let newProdCart = new cartProd(index);
     infoWs = newProdCart;
@@ -108,7 +112,6 @@ function displayCart() {
     checkCart();
     totalPriceCart();
 };
-
 
 
 let totalPrice = (item) => item.price * item.quantity;
