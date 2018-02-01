@@ -69,18 +69,61 @@ function addInfoCart() {
     });
 }
 
-function checkProductCart(item) {
-    cart[item].id == cart[item].id;
-}
+<<<<<<< HEAD
+
+// function checkProductCart(item) {
+//     return (item.id === product[index].id);
+// }
+
+
+
 
 function addCart() {
+
+    // let check = cart.some(checkProductCart);
+    // console.log(check);
+    //      if(check){
+
+    //      }
+=======
+
+function addNewProduct() {
+>>>>>>> 44c2a66897cb9efc8bbb10608499267ddc2df095
+
     let newProdCart = new cartProd(index);
     infoWs = newProdCart;
     cart.push(newProdCart);
     refreshArr(cart);
     addInfoCart();
-
+<<<<<<< HEAD
+=======
 };
+
+function checkProductCart() {
+    for (let i = 0; i < cart.length; i++) {
+        if (cart[i].id == product[index].id) {
+            return i;
+        }
+    }
+};
+
+function addCart() {
+
+    let item = checkProductCart();
+
+    if (cart.length === 0) {
+        addNewProduct();
+    } else if (item >= 0) {
+        cart[item].quantity += 1;
+        refreshArr(cart);
+        addInfoCart();
+        return;
+    } else {
+        addNewProduct();
+    }
+>>>>>>> 44c2a66897cb9efc8bbb10608499267ddc2df095
+};
+
 
 let itemShowCart = (item, index) => `<div class="infoProdCart" data-index=${index}>
 <div class="cartImg"><img src = ${item.foto}></div>
