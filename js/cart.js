@@ -70,6 +70,7 @@ function addInfoCart() {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 // function checkProductCart(item) {
 //     return (item.id === product[index].id);
@@ -89,6 +90,10 @@ function addCart() {
 
 function addNewProduct() {
 >>>>>>> 44c2a66897cb9efc8bbb10608499267ddc2df095
+=======
+
+function addNewProduct() {
+>>>>>>> 44c2a66897cb9efc8bbb10608499267ddc2df095
 
     let newProdCart = new cartProd(index);
     infoWs = newProdCart;
@@ -96,7 +101,10 @@ function addNewProduct() {
     refreshArr(cart);
     addInfoCart();
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 44c2a66897cb9efc8bbb10608499267ddc2df095
 };
 
 function checkProductCart() {
@@ -106,11 +114,19 @@ function checkProductCart() {
         }
     }
 };
+<<<<<<< HEAD
 
 function addCart() {
 
     let item = checkProductCart();
 
+=======
+
+function addCart() {
+
+    let item = checkProductCart();
+
+>>>>>>> 44c2a66897cb9efc8bbb10608499267ddc2df095
     if (cart.length === 0) {
         addNewProduct();
     } else if (item >= 0) {
@@ -121,6 +137,9 @@ function addCart() {
     } else {
         addNewProduct();
     }
+<<<<<<< HEAD
+>>>>>>> 44c2a66897cb9efc8bbb10608499267ddc2df095
+=======
 >>>>>>> 44c2a66897cb9efc8bbb10608499267ddc2df095
 };
 
