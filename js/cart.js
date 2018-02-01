@@ -1,7 +1,6 @@
 "use strict";
 
 let cart = [];
-let regex = /^[a-zA-Zа-яёА-ЯЁ\s\-]+$/u;
 let infoWs = " ";
 
 
@@ -190,7 +189,8 @@ $("#cartShowProd").on("click", ".deleteBtn", function (event) {
 let formName = document.forms.contact_form.elements.name;
 let formLastName = document.forms.contact_form.elements.lastName;
 
-function checkValidation(formName, regex) {
+function checkValidation(formName) {
+    let regex = /^[a-zA-Zа-яёА-ЯЁ\s\-]+$/u;
 
     formName.onblur = function () {
         //let nameVal = form.elements.name.value;
@@ -209,10 +209,21 @@ function checkValidation(formName, regex) {
     }
 };
 
+
+// $("#buyBtn").click(function () {
+//     $("#orderForm").toggleClass("contact_formVis");
+//     $("#orderForm").on("click", "input", function (event) {
+//         let formName = $(event.target).parent().parent();
+//         checkValidation(formName);
+//     });
+
+// });
+
+
 $("#buyBtn").click(function () {
     $("#orderForm").toggleClass("contact_formVis")
-    checkValidation(formName, regex);
-    checkValidation(formLastName, regex);
+    checkValidation(formName);
+    checkValidation(formLastName);
 });
 
 $("#submitBtn").click(function () {
