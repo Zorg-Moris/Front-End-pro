@@ -69,18 +69,40 @@ function addInfoCart() {
     });
 }
 
-function checkProductCart(item) {
-    cart[item].id == cart[item].id;
-}
 
-function addCart() {
+function addNewProduct() {
+
     let newProdCart = new cartProd(index);
     infoWs = newProdCart;
     cart.push(newProdCart);
     refreshArr(cart);
     addInfoCart();
-
 };
+
+function checkProductCart() {
+    for (let i = 0; i < cart.length; i++) {
+        if (cart[i].id == product[index].id) {
+            return i;
+        }
+    }
+};
+
+function addCart() {
+
+    let item = checkProductCart();
+
+    if (cart.length === 0) {
+        addNewProduct();
+    } else if (item >= 0) {
+        cart[item].quantity += 1;
+        refreshArr(cart);
+        addInfoCart();
+        return;
+    } else {
+        addNewProduct();
+    }
+};
+
 
 let itemShowCart = (item, index) => `<div class="infoProdCart" data-index=${index}>
 <div class="cartImg"><img src = ${item.foto}></div>
