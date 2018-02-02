@@ -186,9 +186,6 @@ $("#cartShowProd").on("click", ".deleteBtn", function (event) {
 });
 
 
-let formName = document.forms.contact_form.elements.name;
-let formLastName = document.forms.contact_form.elements.lastName;
-
 function checkValidation(formName) {
     let regex = /^[a-zA-Zа-яёА-ЯЁ\s\-]+$/u;
 
@@ -210,20 +207,16 @@ function checkValidation(formName) {
 };
 
 
-// $("#buyBtn").click(function () {
-//     $("#orderForm").toggleClass("contact_formVis");
-//     $("#orderForm").on("click", "input", function (event) {
-//         let formName = $(event.target).parent().parent();
-//         checkValidation(formName);
-//     });
-
-// });
-
-
 $("#buyBtn").click(function () {
-    $("#orderForm").toggleClass("contact_formVis")
+    $("#orderForm").toggleClass("contact_formVis");
+    let formName = document.forms.contact_form.elements.name;
+    let formLastName = document.forms.contact_form.elements.lastName;
     checkValidation(formName);
     checkValidation(formLastName);
+});
+
+$("#submitBtn").click(function () {
+    wsBtn(info)
 });
 
 $("#submitBtn").click(function () {
