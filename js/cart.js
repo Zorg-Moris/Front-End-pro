@@ -208,6 +208,7 @@ function checkValidation(formName) {
 
 
 $("#buyBtn").click(function () {
+    $(this).attr("disabled", true);
     $("#orderForm").toggleClass("contact_formVis");
     let formName = document.forms.contact_form.elements.name;
     let formLastName = document.forms.contact_form.elements.lastName;
