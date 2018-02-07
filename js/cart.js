@@ -3,7 +3,6 @@
 let cart = [];
 let infoWs = " ";
 
-
 function cartProd(index) {
     this.id = product[index].id;
     this.category = product[index].category;
@@ -27,6 +26,8 @@ $(document).ready(function () {
     } else {
         $("#cartMessage").addClass("cartMessageVis");
     }
+    cartQuantity();
+
 });
 
 function checkLocalStorage() {
@@ -79,11 +80,31 @@ function addNewProduct() {
 
 function checkProductCart() {
     for (let i = 0; i < cart.length; i++) {
-        if (cart[i].id == product[index].id) {
+        if (cart[i].id === product[index].id) {
             return i;
         }
     }
 };
+
+// function addCart() {
+
+//     let item = checkProductCart();
+
+
+//     if (cart.length === 0) {
+//         addNewProduct();
+//     } else if (item >= 0) {
+//         cart[item].quantity += 1;
+//         refreshArr(cart);
+//         addInfoCart();
+//     } else {
+//         addNewProduct();
+//     }
+//     cartQuantity();
+//     // totalCartQuantity = cartQuantity();
+//     // $("#quantity").html(totalCartQuantity);
+// };
+
 
 function addCart() {
 
@@ -95,10 +116,12 @@ function addCart() {
         cart[item].quantity += 1;
         refreshArr(cart);
         addInfoCart();
-        return;
     } else {
         addNewProduct();
     }
+    cartQuantity();
+    // totalCartQuantity = cartQuantity();
+    // $("#quantity").html(totalCartQuantity);
 };
 
 
@@ -157,7 +180,7 @@ function changePrice(index, quantity) {
 
 $("#cartShowProd").on("input", ".inputCart", function (event) {
     let index = $(event.target).parent().parent().data("index");
-    let quantity = $(this).val();
+    let quantity = Number($(this).val());
 
     let regex = /^\d+$/;
     let Ok = regex.test(quantity);
@@ -189,34 +212,43 @@ $("#cartShowProd").on("click", ".deleteBtn", function (event) {
 function checkValidation(formName) {
     let regex = /^[a-zA-Zа-яёА-ЯЁ\s\-]+$/u;
 
-    formName.onblur = function () {
-        //let nameVal = form.elements.name.value;
-        let nameVal = formName.value;
+    formName.blur(function () {
+        let nameVal = formName.val();
         let Ok = regex.test(nameVal);
 
         if (!Ok) {
-
             formName.focus();
-            formName.classList.add("alarmForm");
-
+            formName.addClass("alarmForm");
         } else {
-            formName.classList.remove("alarmForm");
-            formName.classList.add("validForm");
+            formName.removeClass("alarmForm");
+            formName.addClass("validForm");
+        }
+    });
+}
+
+
+function cartQuantity() {
+    let sum = 0;
+    if (cart.length === 0) {
+        return 0;
+    } else {
+        for (let i = 0; i < cart.length; i++) {
+            sum += Number(cart[i].quantity);
         }
     }
-};
 
+    $("#quantity").html(`${sum} шт.`);
+}
 
 $("#buyBtn").click(function () {
+    $(this).attr("disabled", true);
     $("#orderForm").toggleClass("contact_formVis");
-    let formName = document.forms.contact_form.elements.name;
-    let formLastName = document.forms.contact_form.elements.lastName;
+
+    let formName = $("#name");
+    let formLastName = $("#lastName");
+
     checkValidation(formName);
     checkValidation(formLastName);
-});
-
-$("#submitBtn").click(function () {
-    wsBtn(info)
 });
 
 $("#submitBtn").click(function () {
