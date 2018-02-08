@@ -86,25 +86,6 @@ function checkProductCart() {
     }
 };
 
-// function addCart() {
-
-//     let item = checkProductCart();
-
-
-//     if (cart.length === 0) {
-//         addNewProduct();
-//     } else if (item >= 0) {
-//         cart[item].quantity += 1;
-//         refreshArr(cart);
-//         addInfoCart();
-//     } else {
-//         addNewProduct();
-//     }
-//     cartQuantity();
-//     // totalCartQuantity = cartQuantity();
-//     // $("#quantity").html(totalCartQuantity);
-// };
-
 
 function addCart() {
 
@@ -120,8 +101,7 @@ function addCart() {
         addNewProduct();
     }
     cartQuantity();
-    // totalCartQuantity = cartQuantity();
-    // $("#quantity").html(totalCartQuantity);
+ 
 };
 
 
@@ -180,7 +160,7 @@ function changePrice(index, quantity) {
 
 $("#cartShowProd").on("input", ".inputCart", function (event) {
     let index = $(event.target).parent().parent().data("index");
-    let quantity = Number($(this).val());
+    let quantity = parseInt($(this).val());
 
     let regex = /^\d+$/;
     let Ok = regex.test(quantity);
@@ -233,7 +213,7 @@ function cartQuantity() {
         return 0;
     } else {
         for (let i = 0; i < cart.length; i++) {
-            sum += Number(cart[i].quantity);
+            sum += cart[i].quantity;
         }
     }
 
